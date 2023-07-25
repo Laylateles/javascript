@@ -6,7 +6,7 @@
     <title>Teste</title>
     <style>
         body {
-            background-color: aquamarine;
+            
             font-family: Arial, Helvetica, sans-serif;
            
         }
@@ -17,16 +17,24 @@
 </head>
 <body>
     <h1>Teste de extensão </h1>
-    <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
-    <div id="uai">Clique em mim</div>
+    <p id="par">Aqui vai o resultado</p>
+    <p name="seg">Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <div class="dev">Clique em mim</div>
 
     <script>
-        var corpo = window.document.body
-        var p1 = window.document.getElementsByTagName('p')[1]
-        var a = window.document.querySelector("div#uai")
-        a.innerText = 'merda'
-        a.style.color = 'red'
+        var body = window.document.body
+        body.style.backgroundColor = 'lightgreen'
+
+        var test = window.document.getElementById('par')
+        test.style.color = 'red'
+
+        var fod = window.document.getElementsByName('seg')[0]
+        fod.style.color = 'orange'
+
+
+        var probl = window.document.getElementsByClassName('dev')[0]
+        probl.style.color = 'blue'
+
         // document.write(p1.innerHTML)
         // // p1.style.color = 'white'
         // // corpo.style.backgroundColor = 'orange'
