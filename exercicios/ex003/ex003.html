@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        div{
+            margin-top: 10px ;
+        }
+    </style>
+</head>
+<body>
+    <h1>Testando</h1>
+    <form action="teste.php" method="get">
+        
+            <label for="inum"></label>
+            <input type="number" name="num" id="inum" required> +
+       <!-- aqui o id:inum da var num1-->
+            <label for="inum2"></label>
+            <input type="number" name="num2" id="inum2" required>
+        <!-- aqui o id:inum2 da var num2-->
+        <input type="button" value="somar" onclick="somar()">
+        <div id="rest">Resultado</div>
+    </form>
+
+    <script>
+
+        function  somar() {
+            var num1 =window.document.getElementById('inum')
+            var num2 =window.document.getElementById('inum2')
+            var n1 =Number(num1.value)
+            var n2 =Number(num2.value)
+            var s = n1 + n2
+            var res = window.document.getElementById('rest')
+            res.innerHTML = `A soma entre ${n1} e ${n2} resulta em = ${s}`
+        }
+
+        // o  n1 e n2 são para converter os valores escolhidos da pessoa em números pois,como visto antes,por padrão é string e precisa converter para number
+        // o var num1 e num2 é feito para haver uma ligação com os inputs pelo id
+        // e o res é para que na hora que for mostra o resultado for feita a troca da palavra 'resultado' pela frase do inner.HTML como visto acima
+    </script>
+</body>
+</html>
