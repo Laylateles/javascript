@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Testando soma</h1>
+    <form action="teste.php">
+        <input type="number" name="a" id="a1" required placeholder="Digite um número"> +
+        <input type="number" name="b" id="b1" required placeholder="Digite um número">
+        <span id="rest">Resultado :</span>
+        <div>
+            <input type="button" value="Somar" onclick="somar()">
+        </div>
+    </form>
+
+    <script>
+        
+    function somar(){
+            var numero1 = window.document.getElementById('a1')
+            var numero2 = window.document.getElementById('b1')
+            var n1 =Number(a1.value)
+            var n2 =Number(b1.value)
+            var s = n1 + n2
+            var rest = window.document.getElementById('rest')
+            rest.innerHTML = `A soma entre ${n1} e ${n2} resulta em ${s}`}
+    </script>
+
+    <!-- o somar na fuction é para que somente vai somar quando clicar no botão somar que vai fazer as contas é importante entender isso,que o evento de clicar que vai disparar todos esse códigos,VOCÊ tem q entender isso!!!!! entender q apartir da onde vai começar a fuction.Entendeu????? -->
+</body>
+</html>
