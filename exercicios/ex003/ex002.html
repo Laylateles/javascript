@@ -21,30 +21,50 @@
 <body>
     <!-- <h1 id="titu" onclick="clicar()">TESTE</h1>   Não funciona pois,ja tem um clicar!! -->
     <h1>TESTE</h1>
-     <div id="test">  
+     <div id="test"> <!--onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"--> 
         Interaja...
     </div>
 
     <script>
-         var a = window.document.getElementById('test')
-         a.addEventListener('click',clicar)
-         a.addEventListener('mouseenter',entrar) 
-         a.addEventListener('mouseout',sair)
+        var c = window.document.getElementById('test')
+        c.addEventListener('click',clicar)
+        c.addEventListener('mouseenter',entrar)
+        c.addEventListener('mouseout',sair)
 
-         function clicar() {
-             a.innerText = 'Clicou!'
-             a.style.backgroundColor = 'red'
-         }
-
-         function entrar() { 
-             a.innerText = 'Passou o mouse!'
-             a.style.backgroundColor = 'blue'
-         }
-
-        function sair() { 
-            a.innerText = 'Saiu!'
-            a.style.backgroundColor = 'purple'
+        function clicar() {
+            c.innerHTML = 'CLICOU!'
+            c.style.backgroundColor = 'purple'
         }
+
+        function entrar(){
+            c.innerHTML = 'PASSOU!'
+            c.style.backgroundColor = 'orange'
+        }
+
+        function sair() {
+            c.innerHTML = 'SAIU!'
+            c.style.backgroundColor = 'red'
+        }
+
+        //  var a = window.document.getElementById('test')
+        //  a.addEventListener('click',clicar)
+        //  a.addEventListener('mouseenter',entrar) 
+        //  a.addEventListener('mouseout',sair)
+
+        //  function clicar() {
+        //      a.innerText = 'Clicou!'
+        //      a.style.backgroundColor = 'red'
+        //  }
+
+        //  function entrar() { 
+        //      a.innerText = 'Passou o mouse!'
+        //      a.style.backgroundColor = 'blue'
+        //  }
+
+        // function sair() { 
+        //     a.innerText = 'Saiu!'
+        //     a.style.backgroundColor = 'purple'
+        // }
 
     </script>
 </body>
