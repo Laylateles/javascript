@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <form action="calculadora.php">
+        <input type="number" name="num1" id="inum1" required> x
+        <input type="number" name="num2" id="inum2" required>
+        <input type="button" value="Calcular" onclick="calcular()">
+         <div id="res">
+            Resultado:
+        </div> 
+    </form>
+    <script>
+        function calcular() {
+            var número1 = window.document.getElementById('inum1')
+            var número2 = window.document.getElementById('inum2')
+            var n1 =Number(número1.value)
+            var n2 =Number(número2.value)
+            var s = n1 * n2
+            var resultado = window.document.getElementById('res')
+            resultado.innerHTML = `O resultado de sua conta é ${s}`
+        }
+    </script>
+
+</body>
+</html>

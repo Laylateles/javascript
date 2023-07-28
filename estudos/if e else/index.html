@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Idade</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Idade</h1>
+    <form action="idade.php">
+        <div>
+            <label for="ida">Digite sua idade:</label>
+            <input type="number" name="da" id="ida" required min="10">
+            <input type="button" value="Confirmar" onclick="confirmar()">
+        </div>
+        <div id="res">
+            Resultado:
+        </div>
+    </form>
+
+    <script>
+        function confirmar(){
+            var idade = window.document.getElementById('ida')
+            var n1 = Number(idade.value)
+            var res = window.document.getElementById('res')
+            res.innerHTML = `Sua idade é ${n1}`
+            if (n1 < 18) {
+                res.innerHTML += '<p>Sinto muito!Mas a idade mínima para acessar nosso site é 18 anos.</p>'
+            } else {
+                res.innerHTML += '<p>Você possui a idade adequada para acessar nosso conteúdo!'}
+        }
+    </script>
+</body>
+</html>
