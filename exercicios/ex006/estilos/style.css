@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+/* cor manha : #FDCB46
+   cor tarde: #E0863F
+   cor noite: #322119
+*/
+
 *{
     margin: 0px;
     padding: 0px;
@@ -19,6 +24,7 @@ h1 {
     text-align: center;
     margin: 7px;
     font-size: 2.4em;
+    color: white;
 }
 
 main#principal {
@@ -32,10 +38,16 @@ main#principal {
 
 div {
     padding: 2px;
+    font-size: 1.2em;
+}
+
+div#foto {
+    text-align: center;
 }
 
 footer {
     text-align: center;
     margin: 10px;
     font-style: italic;
+    color: white;
 }
