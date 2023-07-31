@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data e Hora</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+           Verificador de Idade
+        </h1>
+    </header>
+    <main id="principal">
+        <article>
+            <form action="idade.php" method="get">
+                <div>
+                    <label for="iano">Ano de Nascimento:</label>
+                    <input type="number" name="ano" id="iano" value="1950" >
+                </div>
+                <div>
+                    <label for="isex">Sexo:</label>
+                    <input type="radio" name="Sexo" id="imasc" value="M"> <label for="imasc">Masculino</label>
+                    <input type="radio" name="Sexo" id="ifem" value="F"> <label for="ifem">Feminino</label>
+                </div>
+                <div onclick="clicar()">
+                    <input type="button" value="Verificar">
+                </div>
+                <div id="res">
+                    Preencha os dados acima para ver o resultado!
+                </div>
+            </form>
+        </article>
+    </main>
+    <footer>
+        <p>
+            CursoemVídeo
+        </p>
+    </footer>
+</body>
+</html>
