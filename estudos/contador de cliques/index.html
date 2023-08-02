@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        /* div#click{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding-top: 35px;
+            font-size: 20px;
+            height: 70px;
+            width: 125px;
+            /* position: absolute; */
+            /* top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%); */
+
+            button {
+                padding: 20px;
+                font-size: 18px;
+            }
+    </style>
+</head>
+<body>
+    <h1>
+        Clique abaixo e descubra quantas vezes clicou!
+    </h1>
+
+   <p>
+       <button onclick="contar()">Clique em mim </button>
+       <button onclick="zerar()">Zerar contador</button>
+   </p>
+   <p id="res">
+       Foi clicado 0 vezes!
+   </p>
+    
+    <script>
+            var contador = 0
+            var res = window.document.getElementById('res')
+
+        function contar()  {
+            contador ++
+            res.innerHTML = `Foi clicado ${contador} vezes!`
+        }
+
+        function zerar() {
+            contador = 0
+            res.innerHTML = null
+        }
+    </script>
+
+    <!-- foi bem dificil -->
+    <!-- as variaveis fora é pq vale para o programa inteiro -->
+    <!-- o contador ++ equivale q a cada vez clicado ele acrescenta mais um -->
+    <!-- e o res.innerHTML = null quer dizer q vai ficar vazio -->
+</body>
+</html>
