@@ -21,8 +21,9 @@
     <p id="res">Clique no botão acima para iniciar.</p>
 
     <script>
+        
         function clicar(){
-          var distância =Numberwindow.prompt('Digite uma distância em metros (m)')
+          var distância = Number(window.prompt('Digite uma distância em metros (m)'))
           var km = distância / 1000
           var hm = distância / 100
           var dam = distância / 10
@@ -30,8 +31,10 @@
           var cm = distância * 100
           var mm = distância * 1000
           var resultado = window.document.getElementById('res')
-          resultado.innerHTML = `A distância de ${distância} metros, corresponde a.... <br> ${km} quilômetros(KM)`
+          resultado.innerHTML = `A distância de ${distância} metros, corresponde a.... <br> ${km} quilômetros(KM) <br> ${hm} hectômetros(HM)`
         }
+
+
 
         // continuo amanhã
     </script>
