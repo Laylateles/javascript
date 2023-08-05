@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moedas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$  em   US$</h1>
+    <button onclick="clicar()">Converter</button>
+    <p id="res">Clique no botão acima para iniciar.</p>
+
+    <script>
+        window.prompt('Antes de mais nada.Quanto está a cotação do dólar agora?')
+        var d =Number(window.prompt.value)
+
+        function clicar() {
+            window.prompt('Quanto R$ você tem na carteira?')
+            var r = Number(window.prompt.value)
+            var s = d * r
+            var res = window.document.getElementById('res')
+            res.innerHTML = `Você teria ${s} dinheiro na carteira`
+
+            // termino amanhã
+            
+        }
+    </script>
+</body>
+</html>
