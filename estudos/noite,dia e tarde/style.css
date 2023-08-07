@@ -6,27 +6,40 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body,html {
+    width: 100vw;
+    height: 98vh;
+}
+
 h1{
     text-align: center;
     margin: 10px;
     padding: 10px;
+    font-size: 40px;
+    color: white;
 }
 
-main,header {
-    background-color: bisque;
+main{
+    background-color: white;
+    border-radius: 20px;
     width: 600px;
-    height: 220px;
+    /* height: 450px; */
     margin: auto;
 }
 
-div {
+div#mensa{
     height: 100px;
     text-align: center;
-   padding: 20px;
+    padding: 20px;
+}
+
+#foto{
+    text-align: center;
 }
 
 footer {
     margin: 10px;
     color: brown;
     text-align: center;
+    color: white;
 }
