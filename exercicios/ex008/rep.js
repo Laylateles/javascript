@@ -1,8 +1,14 @@
-var a = 1
-do {
-    console.log(`Passo ${a}`)
-    a++
-} while(a <= 6)
+// var a = 1
+// do {
+//     console.log(`Passo ${a}`)
+//     a++
+// } while(a <= 6)
+
+var b = 1
+while(b <= 10){
+    console.log(`Testando ${b}`)
+    b++
+}
 // basicamente tem o mesmo resultado q o outro,vai ter situações q é melhor usar um doq o outro
 //do = faça 
 

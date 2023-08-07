@@ -57,6 +57,8 @@ function clicar(){
         res.innerHTML = `<p>Você é ${gênero} e possui ${idade} anos.</p>`
         res.appendChild(img)
 
+        // o appendChild(img) é para colocar o elemento abaixo das coisas escritas
+
     } 
 }
 /*var data = new Date()----para pegar a data atual
