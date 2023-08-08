@@ -1,10 +1,16 @@
-console.log('Começo...')
-for(var a = 1 ; a <= 5 ; a++ ){
-    console.log(`Teste ${a}`)
 
-}
-console.log('FIM!')
+console.log ('Começo...')
+  for(var a = 1 ; a <= 5 ; a++ ){
+     console.log(`Teste ${a}`)
+ }
+  console.log('FIM!')
 
+
+// console.log('Testando')
+// for(var b = 1 ;b <= 8 ;b++){
+//     console.log(`Contando: ${b}`)
+// }
+// console.log('Praticando...')
 
 /*
 
