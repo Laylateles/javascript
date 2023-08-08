@@ -16,9 +16,10 @@ while(b <= 10){
 
 //  var a = 1
 //  while(a <= 6){
-//      console.log(`Passo ${a}`)
+//      console.log(`Passo ${a}`)------bloco
 //      a++ //a++ = a = a+1
 //  } 
+//    o while vai fazer oq estiver no bloco acontecer tantas vezes q estiver escrito na condição
 //  quando usa-se o a++ ele vai até infinito,muito usável!!! Não se esquecer nunca
 
 
