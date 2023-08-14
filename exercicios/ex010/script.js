@@ -1,14 +1,33 @@
 function gerar() {
     var numero = window.document.getElementById('inum')
-    var res = window.document.getElementById('res')
-    var n =Number(numero.value)
-    if (n < 0){
-       res.innerHTML = `O número não possui tabuada dentre os números positivos!`
+    var selc = window.document.getElementById('select')
+    if (numero.value.length == 0){
+       window.alert('Por favor digite um número!')
     } else {
-        for(var t = n ; t >= n; t *= n){
-            res.innerHTML += `A tabuada do número ${n } é : ${t}`
+        var n =Number(numero.value)
+        var c = 1
+        while(c <= 10) {
+            var item = document.createElement('option')
+            item.text = `${n} x ${c} = ${n*c} `
+            item.value = `selc${c}` //importante pro php
+            selc.appendChild(item)
+            c++
         }
     }
 }
 
-//tentar ver a aula amanhã pra ver se ta certo,pq por algum motivo o google n quer abrir o site
+function limpar() {
+    var selc = window.document.getElementById('select')
+    selc.innerHTML = ''//para assim poder limpar e começar vazio a tabuada
+}
+
+
+/*
+var item = document.createElement('option')----- criando elemento option
+item.text = `${n} x ${c} = ${n*c} `---- o text é para mostrar oq vai escrito na var item
+selc.appendChild(item)---mostrar elemento filho q no caso é o item,item q é filho do select
+ while(c <= 10)---- o número q vai ser múltiplicado ao número q foi digitado ele vai até 10
+
+
+
+*/
