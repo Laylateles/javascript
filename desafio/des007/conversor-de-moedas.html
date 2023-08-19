@@ -21,19 +21,16 @@
     <p id="res">Clique no botão acima para iniciar.</p>
 
     <script>
-        window.prompt('Antes de mais nada.Quanto está a cotação do dólar agora?')
-        var d =Number(window.prompt.value)
-
+            var prop= window.prompt('Antes de mais nada.Quanto está a cotação do dólar agora?')
         function clicar() {
-            window.prompt('Quanto R$ você tem na carteira?')
-            var r = Number(window.prompt.value)
-            var s = d * r
+            var r =Number(window.prompt('Quanto R$ você tem na carteira?'))
+            var s = prop * r
             var res = window.document.getElementById('res')
-            res.innerHTML = `Você teria ${s} dinheiro na carteira`
-
-            // termino amanhã
+            res.innerHTML = `<h1>Você teria ${s.toLocaleString('pt-br',{style:'currency' , currency:'BRL'})} dinheiro na carteira</h1>`
             
         }
+        // window.prompt('Antes de mais nada.Quanto está a cotação do dólar agora?')
+        // var d =Number(window.prompt('Antes de mais nada.Quanto está a cotação do dólar agora?'))
     </script>
 </body>
 </html>

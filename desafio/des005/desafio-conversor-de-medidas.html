@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-    <h1>Desafio</h1>
+    <h1>Conversor de Medidas</h1>
     <button onclick="clicar()">Converter</button>
     <p id="res">Clique no botão acima para iniciar.</p>
 
@@ -31,13 +31,16 @@
           var cm = distância * 100
           var mm = distância * 1000
           var resultado = window.document.getElementById('res')
-          resultado.innerHTML = `A distância de ${distância} metros, corresponde a.... <br> ${km} quilômetros(KM) <br> ${hm} hectômetros(HM) <br> ${dam} decâmetros(DAM) <br> ${dm} decímetros(DM) <br> ${cm} centímetros(CM) <br> 
-          ${mm} milímetros(MM)`
+          resultado.innerHTML = `<h1>A distância de ${distância.toFixed(2).replace('.' , ',')} metros, corresponde a..</h1>`
+          resultado.innerHTML += `<p>${km.toFixed(3).replace('.' , ',')} quilômetros(Km)</p>`
+          resultado.innerHTML += `<p>${hm.toFixed(3).replace('.' , ',')} hectômetros(Hm)</p>`
+          resultado.innerHTML += `<p>${dam.toFixed(3).replace('.' , ',')} decâmetros(Dam)</p>`
+          resultado.innerHTML += `<p>${dm.toFixed(1).replace('.' , ',')} decímetros(dm)</p>`
+          resultado.innerHTML += `<p>${cm} centímetros(cm)</p>`
+          resultado.innerHTML += `<p>${mm} milímetros(mm)</p>`
         }
 
-
-
-        // continuo amanhã
+   //${distância.toFixed(2).replace('.' , ',')---converter o ponto pra vírgula é dentro do ${}tbm!
     </script>
 </body>
 </html>

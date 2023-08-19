@@ -22,10 +22,10 @@
     <script>
         function clicar(){
             var compra = window.prompt('Que produto você está comprando?')
-            var preço = window.prompt(`Quanto custa ${compra} que você está comprando?`)
-            var valor = window.prompt(`Qual foi o valor que você deu para pagar ${compra}?`)
+            var preço =Number(window.prompt(`Quanto custa ${compra} que você está comprando?`))
+            var valor =Number(window.prompt(`Qual foi o valor que você deu para pagar ${compra}?`))
             var s = valor - preço
-            window.alert(`Você comprou ${compra} que custou R$${preço},00. Deu R$${valor},00 em dinheiro e vai receber R$${s},00 de troco. Volte sempre!`)
+            window.alert(`Você comprou ${compra} que custou R$${preço.toFixed(2).replace('.' , ',')}. Deu R$${valor.toFixed(2).replace('.' , ',')} em dinheiro e vai receber R$${s.toFixed(2).replace('.' , ',')} de troco. Volte sempre!`)
         }
     </script>
 </body>
