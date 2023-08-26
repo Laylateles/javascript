@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de 10 a 1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1,h3{
+            font-family: 'Pacifico', cursive;
+            font-weight:normal ;
+        }
+        button {
+            font-size: 18px;
+            padding: 20px;
+        }
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contagem regressiva de 10 a 1</h1>
+    <button onclick="contar()">Contar de 10 a 1</button>
+    <p id="res">Aperte o botão acima para contar</p>
+
+    <script>
+        function contar(){
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<h3>Contagem regressiva de 10 a 1</h3>`
+            for(var a = 10;a >= 1;a--  ) {
+                res.innerHTML +=` ${a} ➡`
+            } res.innerHTML +=`⭐`
+        }
+    </script>
+</body>
+</html>
