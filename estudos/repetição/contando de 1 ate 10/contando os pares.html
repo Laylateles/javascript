@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando de 1 a 10</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        button {
+            font-size: 18px;
+            padding: 20px;
+        }
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contando de 1 a 10(marcando os pares)</h1>
+    <button onclick="clicar()">Clique para iniciar</button>
+    <p id="res">Aqui aparece o resultado..</p>
+    <script>
+        function clicar(){
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<h3>Contando de 1 até 10</h3>`
+            for(var n = 1 ;n <= 10; n++){
+                if(n % 2 == 0){
+                    res.innerHTML +=` <mark>${n}</mark>`
+                } else {
+                    res.innerHTML += ` ${n}`
+                }
+            }
+        }
+    </script>
+</body>
+</html>
