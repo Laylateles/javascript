@@ -31,11 +31,14 @@
 <body>
     <h1>Cálculo de Fatorial</h1>
     <p>Escreva um número (entre 1 e 21) na caixa a seguir e te mostrarei o Fatorial dele.</p>
-    <div>
-        <label for="num">Número:</label>
-        <input type="number" name="n" id="num" placeholder="Número" min="1" max="21" required>
-        <button onclick="fatorar()">Fatorar</button>
-    </div>
+    
+    <form action="#" method="get">
+        <div>
+            <label for="num">Número:</label>
+            <input type="number" name="n" id="num" placeholder="Número" min="1" max="21">
+            <button onclick="fatorar()">Fatorar</button>
+        </div>
+    </form>
     <p id="res">Preencha os dados acima e aperte o botão.</p>
 </body>
 </html>
