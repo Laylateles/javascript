@@ -8,7 +8,9 @@ function fatorial(n) {
 
 }
 
-var fat = fatorial(3)
+var fat = fatorial(5)
 console.log(`O número digitado fatorado é ${fat}`)
 
 // fatorial : 5! = 5 x 4 x 3 x 2 x 1 ou 5! = 5 x 4! oque está sendo feito aq encima
+//5! = 5  x  4! 
+//n! = n * (n - 1)
