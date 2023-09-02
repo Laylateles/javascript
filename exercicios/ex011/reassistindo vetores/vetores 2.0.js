@@ -2,6 +2,7 @@ var num = [2,6,3]
 num[3] = 5
 num.push(9)
 var pos = num.indexOf(6)
+console.log(`${num}`)
 console.log(`O valor 6 está na posição ${pos}`)
 console.log(`O vetor possui ${num.length} elementos!`)
 

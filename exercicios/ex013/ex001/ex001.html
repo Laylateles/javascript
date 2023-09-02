@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data e Hora</title>
+    <title>Analisador de Números</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body >
     <header>
         <h1>
+            Analisador de Números
         </h1>
     </header>
     <main id="principal">
         <article>
                 <div>
-                    <label for="ini">Início:</label>
-                    <input type="number" name="ni" id="ini">
+                    <label for="n">Número (entre 1 e 100):</label>
+                    <input type="number" name="inum" id="n">
+                    <button onclick="adicionar()">Adicionar</button>
                 </div>
-                <div>
-                    <label for="fim">Fim:</label>
-                    <input type="number" name="ifim" id="fim">
-                </div>
-                <div>
-                    <label for="pas">Passo:</label>
-                    <input type="number" name="ipas" id="pas">
-                </div>
-                <button onclick="clicar()">Contar</button>
                 <div id="res">
-                    Preparando a contagem...
+                    <p>Números adicionados</p>
+                    <button onclick="finalizar()">Finalizar</button>
                 </div>
         </article>
     </main>
