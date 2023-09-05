@@ -23,6 +23,8 @@ function adicionar(){
         window.alert('[ERRO] digite um número válido!')
     }
 } 
+
+
 /*for(var c = 0; c < num.length;c++){
     res.innerHTML += `<p>Valor ${num} adicionado</p>`
 }
