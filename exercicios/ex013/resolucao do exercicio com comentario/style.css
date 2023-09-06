@@ -42,9 +42,8 @@ div {
     margin: 10px;
 }
 
-select{
-    width: 150px;
-    height: 150px;
+p{
+    margin: 4px;
 }
 
 input[type=number] {

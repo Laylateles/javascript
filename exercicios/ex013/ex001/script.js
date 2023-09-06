@@ -1,3 +1,9 @@
+var num =window.document.getElementById('n')
+var teste = Number(num.value)
+var lista = window.document.getElementById('list')
+var res = window.document.getElementById('res')
+var valores = []
+
 function isNumero(n){
     if(Number(n) >= 1 && Number(n) <= 100){
         return true
@@ -5,7 +11,8 @@ function isNumero(n){
         return false
     }
 }
-function inLista(n , l){
+
+function inLista(n, l){
     if(l.indexOf(Number(n)) != -1){
         return true
     } else{
@@ -13,14 +20,11 @@ function inLista(n , l){
     }
 }
 
-function adicionar(){
-    var num= Number(window.document.getElementById('n').value)
-    var valores = []
-    var res = window.document.getElementById('res')
-    if(isNumero(num) && !inLista(num , valores)){
-        window.alert('Tudo ok!')
+function adicionar() {
+    if(isNumero(teste) && !inLista(teste, valores)) { 
+        valores.push(teste)
     } else {
-        window.alert('[ERRO] digite um número válido!')
+        window.alert('Valor inválido ou já encontrado na lista!')
     }
 } 
 
