@@ -1,5 +1,7 @@
-for(var n = '#' ; ;n += 2){
+var n = '#'
+while(n <= '#######'){
     console.log(`${n}`)
-    break
-    
+    n += '#'
 }
+
+// muito mais dificil doq parece primeiro exercicio feito do livro!!
