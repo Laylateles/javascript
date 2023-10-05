@@ -1,6 +1,9 @@
-var n1 = ''
-var n2 = ''
-for(n1 = '#' ;n1 < '####' ; n1+= '#' ){
-    console.log(`${n1}`)
-}
+    for(var rep =' # ' + ' # ' + ' # ' + ' #\n' ;rep <= '##';rep += '#'){
+        console.log(rep)
+    }
+
+
+// console.log(' # ' + ' # ' + ' # ' + ' #\n') //repetição
+// console.log('  # ' + ' #' + '  #' + "  #\n")
+
 // revejo amanhã
