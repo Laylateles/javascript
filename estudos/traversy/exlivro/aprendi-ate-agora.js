@@ -15,3 +15,6 @@ function somar(){ // funções
 
 
 // esses são os pontos de js que ja estão bem gravados na minha cabeça!!!
+
+
+
