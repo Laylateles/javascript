@@ -12,33 +12,25 @@ function range(ini,fim){
             }
         }
         return cont
+
     }
-}
-var res = range(10,3)
+} 
+function sum(cont){
+    let total = 0
+    for(let a of cont){ //a var a vai percorrer o array e ver os números
+        total += a
+    }
+    // for(let a = 0 ; a < cont.length; a++ ){  duas maneiras de percorrer o array
+    //     total += cont[a]
+    // }
+    return total
+} 
+
+var res = sum(range(2,10)) //a função sum depende da função range pois recebe o array dele como parâ
 console.log(`${res}`)
 
-//terminado a primeira parte !!!!!!
+//feito 2/3
 
 /*
-se inicializa com um let=[] xxx
-método push para adicionar valores xxx
-retornar o array no final da função xxx
-vai ter um looping xxx
-vai ter dois loopings diferentes,um para contar valores crescentes e outro decrescente xxx
-retorna um array contendo todos os valores apartir de ini,até o valor fim(concluindo) xxx
-----------------------------------------------------------------------------------------------------
-
 -->ex bônus,modificar essa função para aceitar um terceiro argumento,que indica o tamanho do incremento usado para construir o array.
-
-*/
-
-function sum(num){
-
-}
-
-/*
--->ele ai receber um array de números como argumento,e retorna a soma deles
--->
--->
-
 */
