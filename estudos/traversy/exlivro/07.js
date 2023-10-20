@@ -1,4 +1,4 @@
-function range(ini,fim){
+function range(ini,fim,incr){
     if(ini == undefined || fim == undefined){
        return 1
     } else {
@@ -14,7 +14,10 @@ function range(ini,fim){
         return cont
 
     }
-} 
+}
+
+
+
 function sum(cont){
     let total = 0
     for(let a of cont){ //a var a vai percorrer o array e ver os números
@@ -26,11 +29,7 @@ function sum(cont){
     return total
 } 
 
-var res = sum(range(2,10)) //a função sum depende da função range pois recebe o array dele como parâ
+var res = sum(range(2,3,2)) //a função sum depende da função range pois recebe o array dele como parâ
 console.log(`${res}`)
 
-//feito 2/3
-
-/*
--->ex bônus,modificar essa função para aceitar um terceiro argumento,que indica o tamanho do incremento usado para construir o array.
-*/
+//EXERCICIO TERMINADO!!!
