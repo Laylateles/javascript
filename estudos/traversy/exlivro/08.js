@@ -1,7 +1,14 @@
-function reverseArray(){
-
+function reverseArray(reverse){
+   // reverse.push(9)
+    reverse.map((el)=>{
+        console.log(el)
+    })
+    let novoArrai = []
+        novoArrai.push(33)
+        console.log(novoArrai)
 }
 
+reverseArray([2,3,5,7,9,11])//ta funcionando,dar uma olhada no livro
 
 /*
 -->reverse=modifica o array invertendo a ordem em que os elementos aparecem
