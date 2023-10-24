@@ -1,7 +1,8 @@
-function arrayToList(seq){
-
+function arrayToList(lista){
+    
 }
-//console.log(arrayToList([10,20]))
+arrayToList([3,4,5])
+//sem progressos por enquanto
 
 /*
 -->constrói uma estrutura similar a do livro quando fornecido [1,2,3]
