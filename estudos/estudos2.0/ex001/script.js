@@ -8,25 +8,24 @@ cursos.map((el,i)=>{
     elementoNovo.setAttribute('id','c' + i)
     elementoNovo.setAttribute('class','mini-box')
     elementoNovo.innerHTML = el
-
-    const lixeira = document.createElement('img')
-    lixeira.setAttribute('src','remover.png')
-    elementoNovo.appendChild(lixeira)
     caixa_1.appendChild(elementoNovo)
 
+    elementoNovo.addEventListener('click',(evt)=>{
+        let add = evt.target
+        add.classList.toggle('selecionado')
+    })
+    
 })
-//terminar amanhã
-
-
-
-
-
- /*
- criar as div
- criar class e nome
- colocar elas na div cx1---appendChild
- criar o evento d clicar no botao
- e transferir aas div para caixa 2--
- depois se não estiver clicado no cx2 transferir para cx1
- 
- */
+    botao.addEventListener('click',()=>{
+    let cursosSelecionados=[...document.querySelectorAll('.selecionado')]
+    let cursosNaoSelecionados=[...document.querySelectorAll('.mini-box:not(.selecionado)')]
+    cursosSelecionados.map((el)=>{
+        caixa_2.appendChild(el)
+    })
+    cursosNaoSelecionados.map((el)=>{
+        caixa_1.appendChild(el)
+    })
+})
+    
+//parece q vai dar tudo errado mais no fim da certo!
+//n desista layla,vc sabe q ama essa merda aq 

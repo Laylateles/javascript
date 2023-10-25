@@ -34,8 +34,9 @@ main{
 }
 
 .selecionado{
-    background-color: red ; 
-    color: black ; 
+    background-color: rgb(107, 106, 106) !important ;
+    border: 2px solid white !important; 
+    color: black !important ; 
 }
 
 .mini-box{
