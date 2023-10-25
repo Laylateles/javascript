@@ -52,3 +52,15 @@ input{
     background-color: rgb(255, 0, 0);
     color: blue;
 }
+
+.comandos {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+#caixaNovoCurso input {
+    margin: 10px;
+    padding: 5px;
+}
