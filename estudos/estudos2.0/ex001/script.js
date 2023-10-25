@@ -8,6 +8,7 @@ cursos.map((el,i)=>{
     elementoNovo.setAttribute('id','c' + i)
     elementoNovo.setAttribute('class','mini-box')
     elementoNovo.innerHTML = el
+    elementoNovo.style.cursor='pointer'
     caixa_1.appendChild(elementoNovo)
 
     elementoNovo.addEventListener('click',(evt)=>{
