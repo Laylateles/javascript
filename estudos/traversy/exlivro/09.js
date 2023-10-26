@@ -1,7 +1,13 @@
 function arrayToList(lista){
-    
+    let minhaLista = null
+     for(let i = lista.length-1; i >=0; i--){
+       minhaLista = {value:lista[i],next:minhaLista}
+     } 
+    return minhaLista
 }
-arrayToList([3,4,5])
+ let res = arrayToList([8,9,2,3,5,1])
+ console.log(res)
+
 //sem progressos por enquanto
 
 /*
@@ -56,3 +62,4 @@ for(var i = list; i ; i= i.rest){}
 -->
 
 */
+
