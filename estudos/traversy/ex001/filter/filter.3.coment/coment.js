@@ -4,9 +4,12 @@ const adiDep = document.querySelector('#adiDepois')
 const remover = document.querySelector('#remov')
 const cursosSelecionados = document.querySelector('#selec')
 const texto = document.querySelector('#itexto')
+//--todos essas const: Essa linha cria uma constante chamada cx2 que representa um elemento do DOM com o ID cx2
 const cursos = ['HTML','CSS','JavaScript','Angular','React','PHP']
+//: Cria uma constante cursos que é um array contendo strings de diferentes cursos.
 
-let indice = 0
+let indice = 0//:Essa variável é utilizada para criar identificadores únicos para os novos elementos criados dentro da função criarNovoCurso.
+
 function criarNovoCurso(curso){
     const novoElement = document.createElement('div')
     novoElement.setAttribute('id','c' + indice)
@@ -23,7 +26,7 @@ function criarNovoCurso(curso){
     comandos.appendChild(radio)
     novoElement.appendChild(comandos)
 
-    return novoElement
+    return novoElement// Isso significa que quando você chama a função criarNovoCurso, ela executa todas as operações dentro dela (como criar elementos, definir atributos, etc.) e, em seguida, retorna o elemento resultante.
 }
 
 
@@ -103,6 +106,9 @@ adiDep.addEventListener('click',(evt)=>{
 })
 
 
+
+
+
 // previousSibling---irmão anterior
  //const cursos2 = radioSeleci.parentNode.parentNode.firstChild.textContent
 /*
@@ -112,3 +118,6 @@ adiDep.addEventListener('click',(evt)=>{
  //cursos2.remove()
    // cx2.removeChild(cursos2)//duas maneiras de remover um elemento
 */
+ 
+ //cursos2.remove()
+   // cx2.removeChild(cursos2)//duas maneiras de remover um elemento
