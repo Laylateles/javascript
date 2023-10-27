@@ -27,10 +27,12 @@ function criarNovoCurso(curso){
 }
 
 
+
 cursos.map((el,i)=>{
     const novoElement = criarNovoCurso(el)
     cx2.appendChild(novoElement)
     indice++
+    
 })
 
 
@@ -48,7 +50,8 @@ function cursoSeleci(){
 cursosSelecionados.addEventListener('click',(evt)=>{
     const radioSeleci = cursoSeleci()
     if(radioSeleci != undefined){
-       const cursos2 = radioSeleci.parentNode.previousSibling.textContent// **2
+       const cursos2 = radioSeleci.parentNode.previousSibling// **2
+       console.log(cursos2)
        window.alert(cursos2)
     } else{
         alert('Selecione um curso')
@@ -61,7 +64,8 @@ cursosSelecionados.addEventListener('click',(evt)=>{
 remover.addEventListener('click',()=>{
     const radioSeleci = cursoSeleci()
     if(radioSeleci != undefined){
-        const cursos2 = radioSeleci.parentNode.parentNode//**1
+        const cursos2 = radioSeleci.parentNode.parentNode
+        console.log(cursos2)
         cx2.removeChild(cursos2)
     } else{
         alert('Selecione um curso')
