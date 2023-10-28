@@ -12,15 +12,16 @@ function criarNovoCurso(curso){
     novoElement.setAttribute('id','c' + indice)
     novoElement.setAttribute('class','border')
     novoElement.innerHTML = curso
+  
 
     const comandos = document.createElement('div')
     comandos.setAttribute('class','comandos')
 
-    const radio = document.createElement('input')
-    radio.setAttribute('type','radio')
-    radio.setAttribute('name','radio_curso')
+    // const radio = document.createElement('input')
+    // radio.setAttribute('type','radio')
+    // radio.setAttribute('name','radio_curso')
 
-    comandos.appendChild(radio)
+    // comandos.appendChild(radio)
     novoElement.appendChild(comandos)
 
     return novoElement
@@ -46,12 +47,10 @@ function cursoSeleci(){
 }
 
 
-
 cursosSelecionados.addEventListener('click',(evt)=>{
     const radioSeleci = cursoSeleci()
     if(radioSeleci != undefined){
-       const cursos2 = radioSeleci.parentNode.previousSibling// **2
-       console.log(cursos2)
+       const cursos2 = radioSeleci.parentNode.previousSibling.textContent// **2
        window.alert(cursos2)
     } else{
         alert('Selecione um curso')
