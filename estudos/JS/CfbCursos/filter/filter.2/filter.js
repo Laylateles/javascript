@@ -7,64 +7,61 @@ const texto = document.querySelector('#itexto')
 const cursos = ['HTML','CSS','JavaScript','Angular','React','PHP']
 
 let indice = 0
-function criarNovoCurso(curso){
-    const novoElement = document.createElement('div')
-    novoElement.setAttribute('id','c' + indice)
-    novoElement.setAttribute('class','border')
-    novoElement.innerHTML = curso
-  
 
-    const comandos = document.createElement('div')
-    comandos.setAttribute('class','comandos')
-
-    // const radio = document.createElement('input')
-    // radio.setAttribute('type','radio')
-    // radio.setAttribute('name','radio_curso')
-
-    // comandos.appendChild(radio)
-    novoElement.appendChild(comandos)
-
-    return novoElement
+function tirarSelecionado(){
+    const cursosSelecionados =[...document.querySelectorAll('.selecionado')]
+    cursosSelecionados.map((el)=>{
+        el.classList.remove('selecionado')
+    })
 }
 
 
+function criarNovoCurso(curso){
+    const novoElement =document.createElement('div')
+    novoElement.setAttribute('id','c' + indice)
+    novoElement.setAttribute('class','border')
+    novoElement.innerHTML = curso
+    novoElement.addEventListener('click',(evt)=>{
+        tirarSelecionado()//está chamando a função
+        const evento = evt.target
+        evento.classList.toggle('selecionado')
+    })
+    return novoElement
+ 
+    // const comandos = document.createElement('div')
+    // comandos.setAttribute('class','comandos')
+    // const radio = document.createElement('input')
+    // radio.setAttribute('type','radio')
+    // radio.setAttribute('name','radio_curso')
+    // comandos.appendChild(radio)
+    // novoElement.appendChild(comandos)----- essas linhas foram apagdas pois o código vai ser modificado
+}
 
 cursos.map((el,i)=>{
     const novoElement = criarNovoCurso(el)
     cx2.appendChild(novoElement)
     indice++
-    
 })
 
-
-
 function cursoSeleci(){
-    const todosRadios =[...document.querySelectorAll('input[type=radio]')]
-    const radioSeleci = todosRadios.filter((el)=>{
-        return el.checked
-    })
-    return radioSeleci[0]
+    const todosCursos =[...document.querySelectorAll('.selecionado')]
+    return todosCursos[0]//retorno diretamente o curso selecionado
 }
 
-
 cursosSelecionados.addEventListener('click',(evt)=>{
-    const radioSeleci = cursoSeleci()
-    if(radioSeleci != undefined){
-       const cursos2 = radioSeleci.parentNode.previousSibling.textContent// **2
-       window.alert(cursos2)
+    const todosCursos = cursoSeleci()
+    if(todosCursos != undefined){
+       const cursos2 = todosCursos.textContent
+       window.alert(`Cursos selecionado: ${cursos2}`)
     } else{
         alert('Selecione um curso')
     }
     
 })
 
-
-
 remover.addEventListener('click',()=>{
-    const radioSeleci = cursoSeleci()
-    if(radioSeleci != undefined){
-        const cursos2 = radioSeleci.parentNode.parentNode
-        console.log(cursos2)
+    if(cursoSeleci()!= undefined){
+        const cursos2 = cursoSeleci()//somente esse pois ja me retorna a div q eu quero
         cx2.removeChild(cursos2)
     } else{
         alert('Selecione um curso')
@@ -72,17 +69,14 @@ remover.addEventListener('click',()=>{
    
 })
 
-
-
 adiAnt.addEventListener('click',(evt)=>{
-    const radioSeleci = cursoSeleci()
-    if(radioSeleci != undefined){
+    if(cursoSeleci() != undefined){
         if(texto.value != ''){
-       const cursos2 = radioSeleci.parentNode.parentNode
+       const cursos2 = cursoSeleci()
        const novoCurso = criarNovoCurso(texto.value)// const novoElement = criarNovoCurso(el)
        cx2.insertBefore(novoCurso,cursos2)//adiciona o novo curso antes do curso selecionado
     }else{
-        alert('Curso não digitado')
+        alert('Digite um curso')
     }
     }else{
         alert('Selecione um curso')
@@ -90,15 +84,13 @@ adiAnt.addEventListener('click',(evt)=>{
 })
 
 adiDep.addEventListener('click',(evt)=>{
-    const radioSeleci = cursoSeleci()
-    if(radioSeleci != undefined){
+    if( cursoSeleci() != undefined){
         if(texto.value != ''){
-       const cursos2 = radioSeleci.parentNode.parentNode
-       const novoCurso = criarNovoCurso(texto.value)// const novoElement = criarNovoCurso(el)
-       cx2.insertBefore(novoCurso,cursos2.nextSibling)//uma gambiarra **3
-       console.log(cursos2)
+       const cursos2 =  cursoSeleci()
+       const novoCurso = criarNovoCurso(texto.value)
+       cx2.insertBefore(novoCurso,cursos2.nextSibling)
     } else{
-        alert('Curso não digitado')
+        alert('Digite um curso')
     }
     } else{
         alert('Selecione um curso')
