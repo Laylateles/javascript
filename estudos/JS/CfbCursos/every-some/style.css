@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body,html{
+    width:100vw ;
+    height:98vh ;
+}
+
+.geral{
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.verde{
+    border: 3px solid green;
+    background-color:rgba(131, 216, 131, 0.5) ;
+
+}
+
+.azul{
+    border: 3px solid blue;
+    background-color: rgba(169, 169, 248, 0.5);
+   
+}
+
+.verm{
+    border: 3px solid rgb(121, 16, 16);
+    background-color:rgba(248, 130, 130, 0.5) ;
+ 
+}
+
+
+button{
+    width: 140px;
+    height: 40px;
+    margin: 3px;
+    font-size: 15px;
+    background-color: rgb(5, 5, 117);
+    color: white;
+    border-radius: 5px;
+    border: none; 
+    cursor: pointer;
+}
