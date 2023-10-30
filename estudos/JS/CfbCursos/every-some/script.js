@@ -10,7 +10,7 @@ verificar.addEventListener('click',(evt)=>{
         if(el >= 18){
             res.innerHTML = `O número está em conformidade é o número ${el} que está na posição ${i}`
         }
-        return el >= 18
+        return el >= 18//como no array tem pelo menos um número que condiz com essa regra ent ele está em conformidade
     })
     if(!ret){
         res.innerHTML = `Array não conforme!`
