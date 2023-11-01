@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin:0px
+}
+
+
+#calcu{
+    width: 350px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+}
+
+.numero{
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+}
+
+input[type=number]{
+    padding: 3px;
+    font-size: 16px;
+}
+
+button{
+    font-size: 14px;
+    height: 30px;
+    width: 150px;
+    margin: 3px;
+}
