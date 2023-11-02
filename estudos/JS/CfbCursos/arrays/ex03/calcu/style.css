@@ -34,3 +34,12 @@ button{
     width: 150px;
     margin: 3px;
 }
+
+#limpar:hover{
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    background-color: rgba(255, 4, 4, 0.76);
+    color: black;
+}
