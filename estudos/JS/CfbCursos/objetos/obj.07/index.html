@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="#" >
+        <div class="inp">
+            <label for="nome">Nome</label>
+            <input type="text" name="nom" id="nome">
+        </div>
+        <div class="inp"> 
+            <label for="num1">Portas</label>
+            <input type="number" name="num" id="num1" value="2" min="2">
+        </div>
+        <div class="inp">
+            <label for="num2">Blindagem</label>
+            <input type="number" name="nume" id="num2" value="0">
+        </div>
+        <div class="inp">
+            <label for="num3">Munição</label>
+            <input type="number" name="numer" id="num3" value="0">
+        </div>
+        <div>
+           <label for="" style="margin: 10px;">Tipo</label>
+           <input type="radio" name="tip" id="mili"><label for="mili">Militar</label>
+           <input type="radio" name="tip" id="norm"><label for="norm">Normal</label>
+        </div>
+        <button id="botão">Adicionar</button>
+    </form>
+    <div id="res" class="caixa">
+    </div>
+    <script src="src.js"></script>
+</body>
+</html>
