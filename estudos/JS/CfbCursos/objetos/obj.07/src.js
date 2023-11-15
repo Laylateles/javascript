@@ -4,7 +4,8 @@ const blindagem = document.querySelector('#num2')
 const municao = document.querySelector('#num3')
 const radi_militar = document.querySelector('#mili')
 const radi_normal = document.querySelector('#norm')
-const botao =document.querySelector('#botão') 
+const botao_adici=document.querySelector('#botão_adc')
+const botao_exc=document.querySelector('#botão_exc')  
 const resultado = document.querySelector('#res')
 
 radi_militar.addEventListener('click',()=>{
@@ -39,18 +40,27 @@ class Militar extends Carro{//classe filho
     }
 }
 // ------------------------------------------------------------------
+let carros = []
+
 function gerenciarCarros(){
     resultado.innerHTML = ''
     carros.forEach((el)=>{
     const div = document.createElement('p')
-    div.innerHTML = `O nome do carro é ${el.nome} e possui ${el.portas} portas `
-    div.innerHTML +=`O nome do carro é ${el.nome} , possui ${el.portas} portas, possui ${el.blind} blindagem e possui ${el.muni} de munição`
+    div.setAttribute('class','carro')
+    div.addEventListener('click',(evt)=>{
+        const car = evt.target
+        car.classList.toggle('selecionado')
+    })
+    div.innerHTML +=`Nome:${el.nome}<br>Portas:${el.portas}<br>Blindagem:${el.blind}<br>Munição:${el.muni}`
     resultado.appendChild(div)
    })
 }
 
-let carros = []
-botao.addEventListener('click',()=>{
+botao_exc.addEventListener('click',()=>{
+    console.log('remover')
+})
+
+botao_adici.addEventListener('click',()=>{
     // dessa vez a class precisa estar fora pois vamos usar a herança dela em outro objeto
     if(radi_normal.checked){
         const c1 = new Carro(nome.value,porta.value)
@@ -63,5 +73,5 @@ botao.addEventListener('click',()=>{
     gerenciarCarros()
 })
 
-
+// quase completp,termino amanhã
 
