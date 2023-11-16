@@ -36,20 +36,31 @@ input[type=radio]{
     cursor: pointer;
 }
 
+.cx1{
+    border: 1px solid black;
+    height: 50px;
+    width: 80px;
+    border-radius: 5px;
+}
+
+.cx1:hover{
+    background-color:rgb(255, 0, 0) ;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
 .carro{
     font-size: 17px;
     font-weight: 100;
     background-color: cadetblue;
     display: flex;
-    width: 200px;
+    width: 230px;
     padding: 5px;
     margin: 5px;
     cursor: pointer;
 }
 
-.carro:hover{
-    background-color:rgb(135, 226, 230) ;
-}
+
 
 .caixa{
     width: 350px;

@@ -5,7 +5,7 @@ const municao = document.querySelector('#num3')
 const radi_militar = document.querySelector('#mili')
 const radi_normal = document.querySelector('#norm')
 const botao_adici=document.querySelector('#botão_adc')
-const botao_exc=document.querySelector('#botão_exc')  
+// const botao_exc=document.querySelector('#botão_exc')  
 const resultado = document.querySelector('#res')
 
 radi_militar.addEventListener('click',()=>{
@@ -47,18 +47,30 @@ function gerenciarCarros(){
     carros.forEach((el)=>{
     const div = document.createElement('p')
     div.setAttribute('class','carro')
-    div.addEventListener('click',(evt)=>{
-        const car = evt.target
-        car.classList.toggle('selecionado')
+    div.setAttribute('data-nome',el.nome)//uma maneira de manipular pelo nome digitado
+    //--------------------------------------------------
+    const botao_exc = document.createElement('button')
+    botao_exc.setAttribute('class','btn cx1')
+    botao_exc.innerHTML = 'Excluir'
+    //--------------------------------------------------
+     botao_exc.addEventListener('click',(evt)=>{
+        const remover = evt.target.parentNode.dataset.nome
+        removerCarro(remover)
+        gerenciarCarros()
+           // console.log(evt.target.parentNode.dataset.nome)//me retorna o nome do cara que eu quero remover
     })
     div.innerHTML +=`Nome:${el.nome}<br>Portas:${el.portas}<br>Blindagem:${el.blind}<br>Munição:${el.muni}`
+    //--------------------------------------------------
+    div.appendChild(botao_exc)
     resultado.appendChild(div)
    })
 }
 
-botao_exc.addEventListener('click',()=>{
-    console.log('remover')
-})
+function removerCarro(quem){
+    carros = carros.filter((el)=>{//o array carros vai receber o valor dessa filtragem
+        return (el.nome != quem)//se for verdadeiro ele vai ser adicionado no novo array de carros
+    }) // se el.nome for diferente do quem ele vai adicionar no novo array,se for igual ele retira
+}
 
 botao_adici.addEventListener('click',()=>{
     // dessa vez a class precisa estar fora pois vamos usar a herança dela em outro objeto
@@ -69,9 +81,12 @@ botao_adici.addEventListener('click',()=>{
         const c2 = new Militar(nome.value,porta.value,blindagem.value,municao.value)
         carros.push(c2)
     }
-    console.log(carros)
     gerenciarCarros()
 })
 
 // quase completp,termino amanhã
 
+/*
+--método filter cria um novo array que passarm no teste lógico dele
+
+*/
