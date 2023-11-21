@@ -2,6 +2,9 @@ class Carro{
     constructor(tipo,estTurbo){
         this.turbo = new Turbo(estTurbo)
         switch(tipo){
+            case 0:
+                this.velMax = 100
+                this.nome = 'lento'
             case 1:
                 this.velMax = 120
                 this.nome = 'normalrapido'
@@ -24,18 +27,20 @@ class Carro{
                 break
 
         }
-        this.velMax+=this.turbo
+        this.velMax+=this.turbo.pot//o pot é a potencia do turbo que está definido no class Turbo
     }
     info(){
-        console.log(`Nome:${this.nome}\nVelocidade Máxima:${this.velMax}\nTurbo:${this.turbo}`)
+        console.log(`Nome:${this.nome}\nVelocidade Máxima:${this.velMax}\nTurbo:${this.turbo.pot}\n-----------------------`)
     }
 }
 
-//termino amanhã
 
 class Turbo{
     constructor(e){
         switch(e){
+            case 0:
+                this.pot = 40
+                break
             case 1:
                 this.pot = 50
                 break
@@ -61,5 +66,20 @@ class Turbo{
     }
 }
 
+class CarroEspecial extends Carro{
+    constructor(estTurbo){
+        super(4,estTurbo)//vai ser o tipo 4 e o estagio do turbo
+        //this.velMax = 300 + this.turbo.pot se casso fosse preciso criar um tipo especial que não tenha sido criado
+        this.nome = 'Carro especial'
+    }
+    info(){//ele sobrescreveu o info do outro obj
+        super.info()//ele chama a info do pai
+    }
+}
+
 const n1 = new Carro(2,4)
+const n2 = new Carro(3,0)
+const n3 = new CarroEspecial(2)//só passamos o estTurbo
 n1.info()
+n2.info()
+n3.info()
