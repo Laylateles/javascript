@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.calc{
+    display:block;
+    margin: auto;
+    margin-top: 5px;
+    height: 330px;
+    width: 280px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: aquamarine;
+}
+
+.nome{
+    font-size: 19px;
+}
+
+.display{
+    width: 260px;
+    margin: 7px;
+    margin-left: 0px;
+    padding: 5px;
+    padding-left: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgba(96, 157, 159, 0.561);
+}
+
+div#div_teclas{
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgba(95, 158, 160, 0.300);
+    height: 220px;
+}
+
+.tecla{
+    cursor: pointer;
+    border: 2px solid rgba(81, 138, 139, 0.616);
+    border-radius: 3px;
+    height: 50px;
+    width: 60px;
+    margin: 2px;
+    font-size: 18px;
+    padding: 5px;
+}
