@@ -41,26 +41,59 @@ array_teclas.forEach((el, i) => {
 
 const display = document.querySelector('#display')
 const teclaLimp = document.querySelector('.limp')
-const teclaLig = document.querySelector('.lig')
 const teclasNum = [...document.querySelectorAll('.num')]
 const teclasSimb = [...document.querySelectorAll('.op')]
 const teclaRes = document.querySelector('.res')
 
+let sinal = false
+let decimal= false
+
 teclasNum.forEach((el) => {
     el.addEventListener('click', (evt) => {
-        display.innerHTML += evt.target.innerHTML//quando eu clicar no número ele vai ser adicionado ao evt e dps vai pegar o innerHTML do evt que no caso é um número
+        sinal =false
+        // display.innerHTML += evt.target.innerHTML//quando eu clicar no número ele vai ser adicionado ao evt e dps vai pegar o innerHTML do evt que no caso é um número
+        if(evt.target.innerHTML == ','){
+            if(!decimal){
+                decimal = true
+                if(display.innerHTML == ''){
+                    display.innerHTML += '0'
+                    //falta essa parte\z
+                } else{
+                    display.innerHTML += evt.target.innerHTML
+                } 
+            }
+        } else{
+            display.innerHTML += evt.target.innerHTML
+        }
     })
 })
 
 teclasSimb.forEach((el) => {
     el.addEventListener('click', (evt) => {
-        display.innerHTML += evt.target.innerHTML
+        if(!sinal){//se não tiver sinal 
+            sinal = true
+            if(evt.target.innerHTML =='x'){
+                display.innerHTML += '*'
+            } else{
+                display.innerHTML += evt.target.innerHTML
+            }
+        }
     })
 })
 
 teclaLimp.addEventListener('click',(evt)=>{
+    sinal = false
+    decimal = false
     display.innerHTML = ''
 })
+
+teclaRes.addEventListener('click',(evt)=>{
+    display.innerHTML += '='
+})
+
+// teclaLig.addEventListener('click',(evt)=>{
+
+// })
 
 
 
