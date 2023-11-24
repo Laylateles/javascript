@@ -10,7 +10,7 @@
     display:block;
     margin: auto;
     margin-top: 5px;
-    height: 330px;
+    height: 365px;
     width: 280px;
     padding: 10px;
     border-radius: 5px;
@@ -36,7 +36,7 @@ div#div_teclas{
     padding: 8px;
     border-radius: 5px;
     background-color: rgba(95, 158, 160, 0.300);
-    height: 220px;
+    height: 270px;
 }
 
 .tecla{
@@ -44,8 +44,13 @@ div#div_teclas{
     border: 2px solid rgba(81, 138, 139, 0.616);
     border-radius: 3px;
     height: 50px;
-    width: 60px;
+    width: 62px;
     margin: 2px;
     font-size: 18px;
-    padding: 5px;
+    padding: 2px;
+}
+
+.tecla:hover{
+    background-color:rgba(119, 114, 114, 0.24);
+    transition: 0.4s;
 }
