@@ -67,7 +67,7 @@ teclasNum.forEach((el) => {
             display.innerHTML += evt.target.innerHTML
         }
     })
-})
+})//tento terminar amanhã
 
 teclasSimb.forEach((el) => {
     el.addEventListener('click', (evt) => {
