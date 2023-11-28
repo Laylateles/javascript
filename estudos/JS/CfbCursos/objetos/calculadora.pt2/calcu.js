@@ -56,9 +56,10 @@ teclasNum.forEach((el) => {
             if(!decimal){
                 decimal = true
                 if(display.innerHTML == ''){
-                    display.innerHTML += '0'
+                    display.innerHTML += '0' + ','
                     //falta essa parte\z
-                } else{
+                } 
+                else{
                     display.innerHTML += evt.target.innerHTML
                 } 
             }
