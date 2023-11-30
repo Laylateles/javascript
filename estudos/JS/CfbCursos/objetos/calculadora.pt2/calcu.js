@@ -27,7 +27,7 @@ array_teclas.forEach((el, i) => {
             button.classList.remove('op')
             break
         default:
-            if (typeof el === 'number') {//se o tipo do elemento for um numero ele adiciona
+            if (typeof el === 'number') { //se o tipo do elemento for um numero ele adiciona
                 button.classList.add('num')//para ser adicionado a class ja criada
             } else {
                 button.classList.add('simb')
@@ -45,56 +45,66 @@ const teclasNum = [...document.querySelectorAll('.num')]
 const teclasSimb = [...document.querySelectorAll('.op')]
 const teclaRes = document.querySelector('.res')
 
-let sinal = false
-let decimal= false
+let sinal = false//não tem nenhum sinal inicialmente
+let decimal = false
 
 teclasNum.forEach((el) => {
     el.addEventListener('click', (evt) => {
-        sinal =false
-        // display.innerHTML += evt.target.innerHTML//quando eu clicar no número ele vai ser adicionado ao evt e dps vai pegar o innerHTML do evt que no caso é um número
-        if(evt.target.innerHTML == ','){
-            if(!decimal){
+        if (evt.target.innerHTML == ',') {
+            if (!decimal) {
                 decimal = true
-                if(display.innerHTML == ''){
-                    display.innerHTML += '0' + ','
-                    //falta essa parte\z
-                } 
-                else{
+                if(display.innerHTML ==''){
+                    display.innerHTML = '0,'
+                }else{
                     display.innerHTML += evt.target.innerHTML
-                } 
+                }
             }
-        } else{
-            display.innerHTML += evt.target.innerHTML
-        }
+        }else{
+        display.innerHTML += evt.target.innerHTML
+    }
+
     })
 })//tento terminar amanhã
 
 teclasSimb.forEach((el) => {
     el.addEventListener('click', (evt) => {
-        if(!sinal){//se não tiver sinal 
+        if (!sinal) {//se não tiver sinal 
             sinal = true
-            if(evt.target.innerHTML =='x'){
+            decimal = false
+            if (evt.target.innerHTML == 'x') {
                 display.innerHTML += '*'
-            } else{
+            } else {
                 display.innerHTML += evt.target.innerHTML
             }
         }
     })
 })
 
-teclaLimp.addEventListener('click',(evt)=>{
-    sinal = false
+teclaLimp.addEventListener('click', (evt) => {
     decimal = false
+    sinal = false
     display.innerHTML = ''
 })
 
-teclaRes.addEventListener('click',(evt)=>{
-    display.innerHTML += '='
+teclaRes.addEventListener('click', (evt) => {
+    sinal = false
+    decimal = false
+    const res = eval(display.innerHTML)
+    display.innerHTML = res //preciso converter a virgula em ponto!
 })
 
 // teclaLig.addEventListener('click',(evt)=>{
 
-// })
+/*
+if (evt.target.innerHTML == ',') {//ate aq ta certo
+            if (!decimal) {
+                decimal = true
+                display.innerHTML += evt.target.innerHTML
+            }
+        }else{
+        display.innerHTML += evt.target.innerHTML
+    }
+*/
 
 
 
