@@ -1,6 +1,6 @@
 //criação das teclas
 const div_teclas = document.querySelector('#div_teclas')
-const array_teclas = [7, 8, 9, '+', 4, 5, 6, '-', 1, 2, 3, 'x', 0, ',', '/', '=', '(', ')', 'lig/des', 'limpar']
+const array_teclas = [7, 8, 9, '+', 4, 5, 6, '-', 1, 2, 3, 'x', 0, ',', '/', '=', '(', ')', 'CPY', 'limpar']
 array_teclas.forEach((el, i) => {
     const button = document.createElement('button')
     button.setAttribute('id', i)
@@ -18,9 +18,9 @@ array_teclas.forEach((el, i) => {
         case '=':
             button.classList.add('res')
             break
-        case 'lig/des':
+        case 'CPY':
             button.classList.remove('op')//para remover uma class
-            button.classList.add('lig')
+            button.classList.add('cpy')
             break
         case 'limpar':
             button.classList.add('limp')
@@ -44,21 +44,23 @@ const teclaLimp = document.querySelector('.limp')
 const teclasNum = [...document.querySelectorAll('.num')]
 const teclasSimb = [...document.querySelectorAll('.op')]
 const teclaRes = document.querySelector('.res')
+const teclaCPY = document.querySelector('.cpy')//vou copiar para area d transferencia do windows
 
 let sinal = false//não tem nenhum sinal inicialmente
 let decimal = false
 
 teclasNum.forEach((el) => {
     el.addEventListener('click', (evt) => {
-        if (evt.target.innerHTML == ',') {
-            if (!decimal) {
+        if (evt.target.innerHTML == ','){
+            display.innerHTML += '.'//precisa ser convertido paea ponto!
+
+            if (!decimal) {//não tiver decimal
                 decimal = true
-                if(display.innerHTML ==''){
-                    display.innerHTML = '0,'
-                }else{
-                    display.innerHTML += evt.target.innerHTML
+                if(display.innerHTML === '.'){
+                    display.innerHTML = '0.'//não pode ter o else se não o display para ponto não funciona
                 }
             }
+
         }else{
         display.innerHTML += evt.target.innerHTML
     }
@@ -68,7 +70,7 @@ teclasNum.forEach((el) => {
 
 teclasSimb.forEach((el) => {
     el.addEventListener('click', (evt) => {
-        if (!sinal) {//se não tiver sinal 
+        if (!sinal) {// não tiver sinal 
             sinal = true
             decimal = false
             if (evt.target.innerHTML == 'x') {
@@ -89,12 +91,17 @@ teclaLimp.addEventListener('click', (evt) => {
 teclaRes.addEventListener('click', (evt) => {
     sinal = false
     decimal = false
-    const res = eval(display.innerHTML)
+    const res = eval(display.innerHTML)//para realizar as expressões
     display.innerHTML = res //preciso converter a virgula em ponto!
 })
 
-// teclaLig.addEventListener('click',(evt)=>{
+teclaCPY.addEventListener('click',(evt)=>{
+    navigator.clipboard.writeText(display.innerHTML)//copia para area de transferencia
+})//isso só funciona se não for no input
+//é importante colocar o display.innerHTML.select() e display.innerHTML.setSelectionRange(0,9999) e o navigator,isso para dispositivos móveis
 
+//writetext = copia pra area de transferencia
+//readtext = cola da area
 /*
 if (evt.target.innerHTML == ',') {//ate aq ta certo
             if (!decimal) {
@@ -105,21 +112,6 @@ if (evt.target.innerHTML == ',') {//ate aq ta certo
         display.innerHTML += evt.target.innerHTML
     }
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 uma maneira de se fazer:
