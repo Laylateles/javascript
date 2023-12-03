@@ -17,6 +17,12 @@
     background-color: aquamarine;
 }
 
+/* .calcPrinc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+} */
 .nome{
     font-size: 19px;
 }
