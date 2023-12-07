@@ -1,0 +1,1 @@
+const relogio = document.querySelector('.div_relogio')

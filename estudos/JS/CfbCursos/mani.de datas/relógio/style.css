@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.div_relogio{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 25px;
+    background-color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+    font-size: 20px;
+    border-radius: 3px;
+}
