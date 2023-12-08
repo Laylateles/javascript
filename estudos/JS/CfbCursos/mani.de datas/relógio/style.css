@@ -1,5 +1,22 @@
 @charset "UTF-8";
 
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.div_data{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 25px;
+    background-color: aqua;
+    padding: 2px;
+    margin: 3px;
+    border-radius: 3px;
+}
+
 .div_relogio{
     display:flex;
     justify-content: center;
@@ -7,8 +24,6 @@
     width: 200px;
     height: 25px;
     background-color: aquamarine;
-    font-family: Arial, Helvetica, sans-serif;
     padding: 3px;
-    font-size: 20px;
     border-radius: 3px;
 }
