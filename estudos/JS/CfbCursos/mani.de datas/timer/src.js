@@ -1,3 +1,9 @@
+//teve q ser colocado aq pois tava dando erro de inicialização
+let ts_atual = null
+let ts_alarme = null
+let alarme_ativado = false 
+let alarme_tocando = false
+
 const data_mes = document.querySelector('.div_data')
 const data = new Date()
 const mes = data.getMonth()
@@ -56,6 +62,14 @@ function rel(){
     segundo = segundo < 10 ? '0'+ segundo : segundo
     //se hora for menor que 10 ele adiciona o 0 se não ele só mostra a hora
     relogio.innerHTML = `${hora}:${minuto}:${segundo}`
+
+    if(alarme_ativado && !alarme_tocando){//se o alarme for igual a true e o alarme tocando for igual a false//não estiver tocando
+        if(data.getTime() >= ts_alarme){//ele pega o timestamp atual e verifica se ele for maior que o timestamp do alarme 
+            alarme_tocando = true
+            //som_alarme.play(),ele aciona o som do alarme
+            timer.classList.add('alarme')
+        }
+    }
 }
 const intervalo = setInterval(rel,1000)
 //é como se ele estivesse em tempo real
@@ -63,8 +77,35 @@ const intervalo = setInterval(rel,1000)
 //chama uma outra função,um time
 rel()
 
-
+const timer = document.querySelector('.timer')
+const tempo_alarme = document.querySelector('#tempo_alarme')
+const hora_alarme = document.querySelector('#hora_alarme')
 const botao_ativar = document.querySelector('#botao_ativar')
 const botao_parar = document.querySelector('#botao_parar')
 
-//terminar amanhã
+//const som_alarme = new Audio('') aqui se direciona para o arquivo de aúdio
+//som_alarme.loop = 3//um looping
+
+
+
+botao_ativar.addEventListener('click',()=>{
+    ts_atual = Date.now()//obtém o timestamp atual( é o que se passou em milissegundos desde 1 de janeiro de 1970)
+    ts_alarme = ts_atual + (tempo_alarme.value*1000)//recebe o valor do timestamp atual mais o valor dado no timer vezes mil para transformar em milisegundos
+    alarme_ativado = true//ativa o alarma
+    const dt_alarme = new Date(ts_alarme)//aqui estou passando o timestamp do alarme e quando colocado no construtor new Date() ele é convertido para a hora do timestamp
+    hora_alarme.innerHTML = 
+    `Hora do Alarme:${(dt_alarme.getHours()<10?'0'+dt_alarme.getHours():dt_alarme.getHours())}:
+    ${(dt_alarme.getMinutes()<10 ? '0'+dt_alarme.getMinutes() : dt_alarme.getMinutes())}:
+    ${(dt_alarme.getSeconds()<10 ? '0'+dt_alarme.getSeconds() : dt_alarme.getSeconds())}`
+    
+})
+
+botao_parar.addEventListener('click',()=>{
+    alarme_ativado = false//o alarme desative
+    alarme_tocando = false//o alarme para de tocar
+    hora_alarme.innerHTML = `Hora do Alarme:`//reinicia o inner do horario
+    tempo_alarme.value = 0//e zera o valor do input dado
+    timer.classList.remove('alarme')//remove a class alarme do timer
+    //som_alarme.pause()//para caso tiver o audio,ele pausa o audio
+    //som_alarme.currentTime = 0//ele rebobina o audio
+})
