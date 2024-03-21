@@ -9,7 +9,7 @@ for(var c = i;c < 10 ;c++){
 //quando se é criada outra var,usa-se ela para os incrementos e teste lógico
 
 var b = 1
-var c = 0
+var c = 2
 if(c > b){
     for(var d = b;d < 10;d++){
         console.log(`O número ${b} é menor do que ${d}.`)
